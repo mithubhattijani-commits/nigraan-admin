@@ -115,8 +115,8 @@ class _LoginScreenState extends State<LoginScreen> {
       setState(() => _error = 'Ghalat password');
     } on ApiException catch (e) {
       setState(() => _error = e.message);
-    } catch (_) {
-      setState(() => _error = 'Login nahi ho saka — internet check karein');
+    } catch (e) {
+      setState(() => _error = 'Login nahi ho saka — internet check karein ($e)');
     } finally {
       if (mounted) setState(() => _busy = false);
     }

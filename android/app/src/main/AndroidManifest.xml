@@ -1,4 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Internet access: every admin API call goes over HTTPS. Without this
+         the release APK makes NO network request at all (login fails with a
+         generic error and nothing ever reaches the server). -->
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:label="Nigraan Admin"
         android:name="${applicationName}"
